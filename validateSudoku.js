@@ -4,13 +4,24 @@
  * @return {character[][]}
  */
 function get3x3Tiles (board) {
-   const NUM_ITEMS = 36;
+   const NUM_ITEMS = 9;
+   const GRID_OFFSET = 3;
    let rtn3x3Tiles = [];
    let tile_3x3 = [];
 
+   // for (let row = 0; row < NUM_ITEMS; row++) {
+   //    for (let column = 0; column < NUM_ITEMS; column++) {
+   //       console.log(`board[${row}][${column}]: ${board[row][column]}`);
+   //    }
+   // }
 
-   for (let idx = 0; idx < NUM_ITEMS; idx++) {
-      console.log(`${idx % 3}, `);
+   for (let grid = 0; grid < 3; grid++) {
+      console.log(`====== Grid ${grid} ======`);
+      for (let idx = 0; idx < 9; idx++) {
+         console.log(idx%3 + (grid%3 * GRID_OFFSET));
+         // console.log(`board[${idx + (grid * GRID_OFFSET)}][${idx}]: ${board[grid][idx]}\n`);
+      }
+      console.log("");
    }
 
    console.log(board[0]);
